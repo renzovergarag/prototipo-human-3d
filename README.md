@@ -1,12 +1,32 @@
-# React + Vite
+# Prototipo 3D — Cuerpo humano
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Pequeño proyecto React + Vite que muestra un modelo 3D (.glb) usando el web component `@google/model-viewer`. Incluye hotspots interactivos y un modal informativo para partes del modelo.
 
-Currently, two official plugins are available:
+## Estructura relevante
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   src/App.jsx — Componente principal que renderiza `<model-viewer>` y los hotspots.
+-   src/assets/modelo.glb — Modelo 3D cargado por defecto.
+-   index.html — Carga global del script de `model-viewer` desde unpkg.
 
-## Expanding the ESLint configuration
+## Uso (macOS)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Instalar dependencias:
+    - npm install
+2. Levantar servidor de desarrollo:
+    - npm run dev
+3. Generar build de producción:
+    - npm run build
+4. Previsualizar build:
+    - npm run preview
+
+El dev server sirve los activos desde `/src/assets`, por eso App.jsx usa `src="/src/assets/modelo.glb"`.
+
+## Notas
+
+-   Para reemplazar el modelo 3D, sustituye `src/assets/modelo.glb`.
+-   Los hotspots y la lógica del modal están en `src/App.jsx` (ajusta posiciones con `data-position`).
+-   `model-viewer` se añade en `index.html`; no requiere instalación adicional en el bundle.
+
+## Contribuciones
+
+Abrir un PR o issue con cambios o mejoras
