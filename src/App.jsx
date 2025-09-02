@@ -15,7 +15,7 @@ function App() {
     // Use an absolute path that Vite serves from the dev server: /src/assets/modelo.glb
     return (
         <main>
-            <h1>Prototico del cuerpo humano 3D</h1>
+            <h1>Cuerpo humano en 3D</h1>
             <div className="viewer-wrapper">
                 {/* model-viewer is loaded globally from index.html */}
                 <model-viewer src="/src/assets/modelo.glb" alt="Modelo 3D" camera-controls auto-rotate exposure="1" ar className="model-viewer">
